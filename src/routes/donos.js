@@ -38,7 +38,7 @@ module.exports = (app) => {
     app.patch('/donos/:iddono', donoController.patchDono
     //#region Documentação
         /*  #swagger.tags = ['Donos']
-        #swagger.summary = 'Atualização parcial do funcionario'
+        #swagger.summary = 'Atualização parcial do dono'
         */
         //#endregion
     )
