@@ -1,0 +1,487 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API CANIL",
+    "description": "Documentação do trabalho da API CANIL"
+  },
+  "host": "localhost:3000",
+  "basePath": "",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/animal": {
+      "get": {
+        "tags": [
+          "Animais"
+        ],
+        "summary": "Lista dos animais",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Animais"
+        ],
+        "summary": "Insere 1 animal",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um animal",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idanimal": {
+                  "type": "number",
+                  "example": 1
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Max"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "macho"
+                },
+                "raca": {
+                  "type": "string",
+                  "example": "Labrador"
+                },
+                "tipo": {
+                  "type": "string",
+                  "example": "cachorro"
+                },
+                "porte": {
+                  "type": "string",
+                  "example": "grande"
+                },
+                "dataentrada": {
+                  "type": "string",
+                  "example": "10/08/2021"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/animal/{idanimal}": {
+      "delete": {
+        "tags": [
+          "Animais"
+        ],
+        "summary": "Deleta 1 animal",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idanimal",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Animais"
+        ],
+        "summary": "Atualização parcial do animal",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idanimal",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/donos": {
+      "get": {
+        "tags": [
+          "Donos"
+        ],
+        "summary": "Lista dos donos que adotaram algum animal do canil",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Donos"
+        ],
+        "summary": "Insere 1 dono",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir algum dono de animal",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "iddono": {
+                  "type": "number",
+                  "example": 1500
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Karin Serafini"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "11745560940"
+                },
+                "telefone": {
+                  "type": "string",
+                  "example": "49998207965"
+                },
+                "endereco": {
+                  "type": "string",
+                  "example": "Rua Conde DEu, 566, SA"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/donos/{iddono}": {
+      "delete": {
+        "tags": [
+          "Donos"
+        ],
+        "summary": "Deleta 1 dono",
+        "description": "",
+        "parameters": [
+          {
+            "name": "iddono",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Donos"
+        ],
+        "summary": "Atualização parcial do funcionario",
+        "description": "",
+        "parameters": [
+          {
+            "name": "iddono",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/estoque": {
+      "get": {
+        "tags": [
+          "Estoque"
+        ],
+        "summary": "Lista todos os produtos no estoque do canil",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Estoque"
+        ],
+        "summary": "Insere 1 produto no estoque",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir algum produto novo ou no estoque",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "iddono": {
+                  "type": "number",
+                  "example": 1500
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Karin Serafini"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "11745560940"
+                },
+                "telefone": {
+                  "type": "string",
+                  "example": "49998207965"
+                },
+                "endereco": {
+                  "type": "string",
+                  "example": "Rua Conde DEu, 566, SA"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/estoque/{idproduto}": {
+      "delete": {
+        "tags": [
+          "Estoque"
+        ],
+        "summary": "Deleta 1 produto do estoque",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idproduto",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Estoque"
+        ],
+        "summary": "Atualização parcial do produto selecionado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idproduto",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/funcionario": {
+      "get": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "summary": "Lista dos funcionarios do canil",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "summary": "Insere 1 funcionario",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um funcionario",
+            "type": "json",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idfuncionario": {
+                  "type": "number",
+                  "example": 500
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "Luana Scheeren"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "14745675912"
+                },
+                "telefone": {
+                  "type": "string",
+                  "example": "49984292935"
+                },
+                "endereco": {
+                  "type": "string",
+                  "example": "Rua Pres. Castelo Branco, 165, SA"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/funcionario/{idfuncionario}": {
+      "delete": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "summary": "Deleta 1 funcionario",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idfuncionario",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "summary": "Atualização parcial de um funcionario",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idfuncionario",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
