@@ -1,0 +1,1 @@
+export const estoque = (state) => state.estoque

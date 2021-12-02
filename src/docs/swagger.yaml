@@ -234,7 +234,7 @@
         "tags": [
           "Donos"
         ],
-        "summary": "Atualização parcial do funcionario",
+        "summary": "Atualização parcial do dono",
         "description": "",
         "parameters": [
           {
@@ -286,25 +286,29 @@
             "schema": {
               "type": "object",
               "properties": {
-                "iddono": {
+                "idproduto": {
                   "type": "number",
-                  "example": 1500
+                  "example": 3000
                 },
-                "nome": {
+                "descricao": {
                   "type": "string",
-                  "example": "Karin Serafini"
+                  "example": "ração"
                 },
-                "cpf": {
+                "quantidade": {
                   "type": "string",
-                  "example": "11745560940"
+                  "example": "10"
                 },
-                "telefone": {
+                "tipoanimal": {
                   "type": "string",
-                  "example": "49998207965"
+                  "example": "gato"
                 },
-                "endereco": {
-                  "type": "string",
-                  "example": "Rua Conde DEu, 566, SA"
+                "valorunit": {
+                  "type": "number",
+                  "example": 5
+                },
+                "valortotal": {
+                  "type": "number",
+                  "example": 50
                 }
               }
             }

@@ -1,0 +1,1 @@
+export const GET_DONOS = "GET_DONOS"

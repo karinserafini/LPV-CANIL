@@ -1,0 +1,1 @@
+export const donos = (state) => state.donos

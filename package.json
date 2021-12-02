@@ -2,20 +2,20 @@
   "name": "LPV-PROJETO2-CANIL",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "scripts": {
+    "dev": "node ./src/index.js",
+    "swaggerbuild": "node ./src/services/swagger.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "main": "index.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "swagger-autogen": "^2.11.2",
     "swagger-ui-express": "^4.1.6"
   },
-  "devDependencies": {},
-  "scripts": {
-    "swaggerbuild": "node ./src/services/swagger.js",
-    "dev": "node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC"
 }

@@ -1,0 +1,1 @@
+export const GET_ESTOQUE = "GET_ESTOQUE"
